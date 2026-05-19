@@ -1,0 +1,722 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;100 Days 100 Reads - Adventure Tracker&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Tailwind CSS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Quicksand:wght@400;600;700&amp;display=swap');</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Quicksand', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f0fdf4;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.brand-font {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Fredoka One', cursive;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Customized Scrollbar */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-track {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #f1f1f1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-thumb {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #86efac;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-thumb:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #4ade80;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Print styling to generate a beautiful physical chart */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media print {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>background: white !important;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>color: black !important;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.no-print {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>display: none !important;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.print-layout {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>display: block !important;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>width: 100% !important;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>max-width: 100% !important;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>margin: 0 !important;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding: 0 !important;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.print-grid {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>grid-template-columns: repeat(10, minmax(0, 1fr)) !important;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>gap: 8px !important;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.print-cell {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>border: 2px solid #cbd5e1 !important;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>background-color: white !important;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>color: #0f172a !important;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>height: 55px !important;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>width: 55px !important;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 14px !important;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>page-break-inside: avoid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.print-header {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>text-align: center !important;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>margin-bottom: 20px !important;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.print-reward-box {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>border: 2px dashed #4ade80 !important;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding: 10px !important;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>margin-top: 20px !important;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>text-align: center !important;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>border-radius: 8px !important;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="min-h-screen text-slate-800 pb-12"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Top Navigation / Header --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header class="no-print bg-white border-b border-green-100 py-4 px-6 sticky top-0 z-40 shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-green-500 text-white p-2.5 rounded-2xl shadow-md shadow-green-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h1 class="brand-font text-2xl text-green-700 tracking-wide"&gt;100 Days, 100 Reads!&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-slate-500 font-semibold"&gt;Cultivating deep minds, one story at a time.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="window.print()" class="flex items-center gap-2 bg-white border-2 border-green-500 text-green-600 hover:bg-green-50 px-4 py-2 rounded-xl text-sm font-bold transition-all shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Print Chart</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="confirmReset()" class="flex items-center gap-2 bg-rose-50 text-rose-600 hover:bg-rose-100 px-4 py-2 rounded-xl text-sm font-bold transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Reset</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Main Content Area --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 print-layout"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Welcome &amp; Goal Panel --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Sidebar Setup: Personalization and Stats (Hidden on Print) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="no-print space-y-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Profile &amp; Customization Card --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white rounded-3xl p-6 border-2 border-green-100 shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="brand-font text-lg text-green-800 mb-4 flex items-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span&gt;🎯&lt;/span&gt; Adventure Setup</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1"&gt;Reader's Name&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input type="text" id="reader-name" oninput="saveSettings()" placeholder="Enter daughter's name" class="w-full px-4 py-2.5 rounded-xl border-2 border-slate-200 focus:border-green-400 focus:outline-none font-semibold transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1"&gt;Start Date&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input type="date" id="start-date" onchange="saveSettings()" class="w-full px-4 py-2.5 rounded-xl border-2 border-slate-200 focus:border-green-400 focus:outline-none font-semibold transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1"&gt;Target Reward / Celebration&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input type="text" id="target-reward" oninput="saveSettings()" placeholder="e.g., Bookshop Spree or Ice Cream Party!" class="w-full px-4 py-2.5 rounded-xl border-2 border-slate-200 focus:border-green-400 focus:outline-none font-semibold transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Live Progress Stats Card --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white rounded-3xl p-6 border-2 border-green-100 shadow-sm relative overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="absolute -right-8 -top-8 w-24 h-24 bg-green-50 rounded-full -z-0"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="brand-font text-lg text-green-800 mb-4 flex items-center gap-2 relative z-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span&gt;📈&lt;/span&gt; Journey Stats</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="grid grid-cols-2 gap-4 relative z-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="bg-green-50 p-4 rounded-2xl text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="block text-3xl font-bold text-green-600 brand-font" id="stat-count"&gt;0&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-xs font-bold text-slate-500 uppercase"&gt;Read&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="bg-amber-50 p-4 rounded-2xl text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="block text-3xl font-bold text-amber-600 brand-font" id="stat-percent"&gt;0%&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-xs font-bold text-slate-500 uppercase"&gt;Progress&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Interactive Progress Bar --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="mt-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex justify-between text-xs font-bold text-slate-500 mb-1.5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span&gt;Journey Completed&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span id="progress-text"&gt;0 / 100 Books&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="w-full bg-slate-100 h-4 rounded-full overflow-hidden p-0.5 border border-slate-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div id="progress-bar" class="bg-gradient-to-r from-green-400 to-emerald-500 h-full rounded-full transition-all duration-500" style="width: 0%"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Milestone Badges Panel --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white rounded-3xl p-6 border-2 border-green-100 shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="brand-font text-lg text-green-800 mb-3 flex items-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span&gt;🏆&lt;/span&gt; Milestones</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-slate-500 mb-4 font-semibold"&gt;Each milestone unlocks a beautiful badge!&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="space-y-3.5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Badge 10 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div id="badge-10" class="flex items-center gap-3.5 p-2 rounded-2xl opacity-40 transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-3xl"&gt;🌱&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-bold text-sm text-slate-700"&gt;Seedling Reader&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-xs text-slate-400"&gt;Read 10 Books&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Badge 25 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div id="badge-25" class="flex items-center gap-3.5 p-2 rounded-2xl opacity-40 transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-3xl"&gt;🌿&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-bold text-sm text-slate-700"&gt;Sprouting Scholar&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-xs text-slate-400"&gt;Read 25 Books&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Badge 50 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div id="badge-50" class="flex items-center gap-3.5 p-2 rounded-2xl opacity-40 transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-3xl"&gt;📘&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-bold text-sm text-slate-700"&gt;Book Devourer&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-xs text-slate-400"&gt;Read 50 Books (Halfway!)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Badge 75 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div id="badge-75" class="flex items-center gap-3.5 p-2 rounded-2xl opacity-40 transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-3xl"&gt;✨&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-bold text-sm text-slate-700"&gt;Wisdom Seeker&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-xs text-slate-400"&gt;Read 75 Books&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Badge 100 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div id="badge-100" class="flex items-center gap-3.5 p-2 rounded-2xl opacity-40 transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-3xl"&gt;👑&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-bold text-sm text-slate-700"&gt;Century Legend&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-xs text-slate-400"&gt;Finished 100 Books!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- The Grid Area (Visible in Web &amp; Styled for Print) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="lg:col-span-2 space-y-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- PRINT HEADER ONLY --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="hidden print:block print-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h1 class="brand-font text-3xl text-slate-900" id="print-title"&gt;My 100 Days 100 Reads Adventure&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-slate-600 font-semibold mt-1"&gt;Starting Date: &lt;span id="print-date"&gt;__________&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- The Interactive / Printable 100 Grid Card --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-green-100 shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-3 no-print"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="brand-font text-xl text-green-800" id="welcome-text"&gt;My Reading Map&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-xs text-slate-500 font-semibold mt-0.5"&gt;Click any number to log or edit a book you have finished reading.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex items-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="inline-block w-3.5 h-3.5 rounded-md bg-green-400"&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-xs font-bold text-slate-500 uppercase"&gt;Read&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="inline-block w-3.5 h-3.5 rounded-md bg-slate-100 border border-slate-300 ml-3"&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-xs font-bold text-slate-500 uppercase"&gt;Unread&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- 100 Grid System --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="reads-grid" class="grid grid-cols-5 sm:grid-cols-10 gap-3.5 print-grid justify-items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Dynamic generated boxes from 1 to 100 go here --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- PRINT REWARD BOX ONLY --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="hidden print:block print-reward-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="font-bold text-sm uppercase tracking-wide text-slate-700"&gt;🏆 The Grand Celebration Reward&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-lg font-bold text-slate-900 mt-1" id="print-reward"&gt;__________________________________________________&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Dynamic Reflection Log list (Web Only) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="no-print bg-white rounded-3xl p-6 border-2 border-green-100 shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex justify-between items-center mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="brand-font text-lg text-green-800"&gt;📖 My Reading Reflection Journal&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span id="journal-count" class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-extrabold"&gt;0 Books Logged&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="empty-journal-state" class="text-center py-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-4xl mb-3"&gt;📚&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-slate-400 font-semibold text-sm"&gt;No books logged yet. Tap a number on your grid to start your first story entry!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="journal-list" class="space-y-4 max-h-[500px] overflow-y-auto pr-2 hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Journal Entries populated here --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Interactive Logging Modal --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="log-modal" class="no-print fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bg-white rounded-3xl shadow-xl border-2 border-green-100 w-full max-w-lg overflow-hidden transform transition-all scale-95 duration-200" id="modal-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bg-green-500 px-6 py-4 flex justify-between items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="brand-font text-white text-lg flex items-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span id="modal-title-num" class="bg-white/20 px-2.5 py-1 rounded-lg text-sm font-black"&gt;Book #1&lt;/span&gt; Log Entry</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="closeModal()" class="text-white hover:text-green-100 transition-colors"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;form id="log-form" onsubmit="saveBookEntry(event)" class="p-6 space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="hidden" id="current-book-num"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-1"&gt;What is the Title? &lt;span class="text-rose-500"&gt;*&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="text" id="modal-title" required placeholder="e.g. Charlotte's Web" class="w-full px-4 py-2 rounded-xl border-2 border-slate-200 focus:border-green-400 focus:outline-none font-semibold transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-2 gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;label class="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-1"&gt;Who is the Author?&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="text" id="modal-author" placeholder="e.g. E.B. White" class="w-full px-4 py-2 rounded-xl border-2 border-slate-200 focus:border-green-400 focus:outline-none font-semibold transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;label class="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-1"&gt;Date Completed&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="date" id="modal-date" class="w-full px-4 py-2 rounded-xl border-2 border-slate-200 focus:border-green-400 focus:outline-none font-semibold transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-1"&gt;How much did you enjoy it?&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-2 mt-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex text-amber-400 text-2xl gap-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span onclick="setRating(1)" class="cursor-pointer star hover:scale-110 transition-transform"&gt;★&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span onclick="setRating(2)" class="cursor-pointer star hover:scale-110 transition-transform"&gt;★&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span onclick="setRating(3)" class="cursor-pointer star hover:scale-110 transition-transform"&gt;★&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span onclick="setRating(4)" class="cursor-pointer star hover:scale-110 transition-transform"&gt;★&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span onclick="setRating(5)" class="cursor-pointer star hover:scale-110 transition-transform"&gt;★&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span id="rating-text" class="text-xs font-bold text-slate-400 ml-2"&gt;Rate it!&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="hidden" id="modal-rating" value="0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Deep Reflection prompt block --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-green-50 p-4 rounded-2xl border border-green-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="block text-xs font-extrabold text-green-800 uppercase tracking-wide mb-1"&gt;💭 Reflection Prompt&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-[11px] text-green-600 mb-2 font-semibold"&gt;Who was your favorite character and why? Or, what was the most surprising thing that happened?&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;textarea id="modal-reflection" rows="3" placeholder="I loved when Charlotte helped Wilbur because..." class="w-full p-3 rounded-xl border-2 border-slate-100 focus:border-green-400 focus:outline-none font-semibold text-sm transition-all"&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between items-center pt-2 gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button type="button" id="delete-btn" onclick="deleteBookEntry()" class="hidden px-4 py-2 rounded-xl border-2 border-rose-100 text-rose-500 hover:bg-rose-50 text-sm font-bold transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Remove Entry</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-2 ml-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button type="button" onclick="closeModal()" class="px-4 py-2 rounded-xl border-2 border-slate-200 text-slate-500 hover:bg-slate-50 text-sm font-bold transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>Cancel</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button type="submit" class="bg-green-500 text-white hover:bg-green-600 px-6 py-2 rounded-xl text-sm font-bold transition-all shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>Save Log Entry</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Alert / Confirmation Modal --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="alert-modal" class="no-print fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bg-white rounded-3xl p-6 shadow-xl border-2 border-slate-100 max-w-sm w-full text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-4xl mb-3"&gt;⚠️&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 class="brand-font text-lg text-slate-800 mb-2"&gt;Are you sure?&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-sm text-slate-500 mb-6 font-semibold" id="alert-message"&gt;This action cannot be undone. All recorded books will be deleted permanently.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="closeAlert()" class="px-4 py-2 rounded-xl border-2 border-slate-200 text-slate-500 hover:bg-slate-100 text-sm font-bold transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>No, Cancel</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="alert-confirm-btn" class="bg-rose-500 text-white hover:bg-rose-600 px-5 py-2 rounded-xl text-sm font-bold transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Yes, Reset</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Core Data Storage structure</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let readingJourney = {};</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let settings = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>readerName: "",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>startDate: "",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>targetReward: ""</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Initialize state on page load</p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.onload = function () {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>loadFromLocalStorage();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>initializeGrid();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateStats();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateBadges();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateJournal();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>applySettingsToUI();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Initialize the 1-100 grid items</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function initializeGrid() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const gridContainer = document.getElementById('reads-grid');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gridContainer.innerHTML = '';</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (let i = 1; i &lt;= 100; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const bookLogged = readingJourney[i];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const button = document.createElement('button');</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Add default, print-friendly, and interactive styling</p>
+<p class="p1"><span class="Apple-converted-space">                </span>button.id = `grid-cell-${i}`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>button.className = `print-cell h-12 w-12 sm:h-14 sm:w-14 rounded-2xl flex flex-col items-center justify-center font-bold text-sm transition-all focus:outline-none relative group`;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (bookLogged) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>button.classList.add('bg-gradient-to-br', 'from-green-400', 'to-emerald-500', 'text-white', 'shadow-md', 'shadow-green-100', 'border-0');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>button.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="text-[10px] leading-none text-green-100 mt-1"&gt;${i}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="text-base mt-0.5"&gt;⭐&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Quick Tooltip on Desktop hover --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="absolute bottom-full mb-2 bg-slate-800 text-white text-xs py-1 px-2.5 rounded-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity whitespace-nowrap z-30"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${escapeHTML(bookLogged.title)}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>button.classList.add('bg-slate-50', 'hover:bg-slate-100', 'text-slate-400', 'border-2', 'border-slate-200');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>button.innerHTML = `&lt;span&gt;${i}&lt;/span&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>button.onclick = () =&gt; openLogModal(i);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>gridContainer.appendChild(button);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Handle settings persistence</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function saveSettings() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>settings.readerName = document.getElementById('reader-name').value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>settings.startDate = document.getElementById('start-date').value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>settings.targetReward = document.getElementById('target-reward').value;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.setItem('reads_settings', JSON.stringify(settings));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>applySettingsToUI();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function applySettingsToUI() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('reader-name').value = settings.readerName;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('start-date').value = settings.startDate;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('target-reward').value = settings.targetReward;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Update headings dynamically</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const welcomeText = document.getElementById('welcome-text');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const printTitle = document.getElementById('print-title');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const printDate = document.getElementById('print-date');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const printReward = document.getElementById('print-reward');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (settings.readerName) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>welcomeText.textContent = `${settings.readerName}'s Reading Map`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>printTitle.textContent = `${settings.readerName}'s 100 Days 100 Reads Adventure`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>welcomeText.textContent = "My Reading Map";</p>
+<p class="p1"><span class="Apple-converted-space">                </span>printTitle.textContent = "My 100 Days 100 Reads Adventure";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>printDate.textContent = settings.startDate ? formatDate(settings.startDate) : "__________";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>printReward.textContent = settings.targetReward ? settings.targetReward : "__________________________________________________";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Format dates beautifully for human reading</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function formatDate(dateStr) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!dateStr) return '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const options = { year: 'numeric', month: 'long', day: 'numeric' };</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return new Date(dateStr).toLocaleDateString('en-US', options);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Open Modal to enter/edit book log</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function openLogModal(bookNumber) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const modal = document.getElementById('log-modal');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const modalContainer = document.getElementById('modal-container');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const deleteBtn = document.getElementById('delete-btn');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('current-book-num').value = bookNumber;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('modal-title-num').textContent = `Book #${bookNumber}`;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Set defaults or prefill existing data</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const existingBook = readingJourney[bookNumber];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (existingBook) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('modal-title').value = existingBook.title;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('modal-author').value = existingBook.author || '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('modal-date').value = existingBook.date || getTodayDateString();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('modal-reflection').value = existingBook.reflection || '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setRating(existingBook.rating || 0);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>deleteBtn.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('modal-title').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('modal-author').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('modal-date').value = getTodayDateString();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('modal-reflection').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setRating(0);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>deleteBtn.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>modal.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>modalContainer.classList.remove('scale-95');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>modalContainer.classList.add('scale-100');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, 50);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function closeModal() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const modal = document.getElementById('log-modal');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const modalContainer = document.getElementById('modal-container');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>modalContainer.classList.remove('scale-100');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>modalContainer.classList.add('scale-95');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>modal.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, 150);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Interactive Rating Star Handler</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function setRating(ratingValue) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('modal-rating').value = ratingValue;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const stars = document.querySelectorAll('.star');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const ratingText = document.getElementById('rating-text');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const textOptions = ["Rate it!", "Hmm, okay", "Nice book!", "Really liked it!", "Amazing story!", "All-time Favorite!"];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ratingText.textContent = textOptions[ratingValue] || "Rate it!";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>stars.forEach((star, index) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (index &lt; ratingValue) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>star.classList.remove('text-slate-300');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>star.classList.add('text-amber-400');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>star.classList.remove('text-amber-400');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>star.classList.add('text-slate-300');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Save entry details to state &amp; local storage</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function saveBookEntry(e) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const bookNum = document.getElementById('current-book-num').value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const title = document.getElementById('modal-title').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const author = document.getElementById('modal-author').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const date = document.getElementById('modal-date').value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const rating = parseInt(document.getElementById('modal-rating').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const reflection = document.getElementById('modal-reflection').value.trim();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!title) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>readingJourney[bookNum] = { title, author, date, rating, reflection };</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.setItem('reads_journey_data', JSON.stringify(readingJourney));</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>closeModal();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>initializeGrid();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateStats();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateBadges();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateJournal();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Delete logged book</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function deleteBookEntry() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const bookNum = document.getElementById('current-book-num').value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (readingJourney[bookNum]) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>delete readingJourney[bookNum];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>localStorage.setItem('reads_journey_data', JSON.stringify(readingJourney));</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>closeModal();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>initializeGrid();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>updateStats();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>updateBadges();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>updateJournal();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Calculate and display progress stats</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function updateStats() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const readCount = Object.keys(readingJourney).length;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const percent = Math.min(100, Math.round((readCount / 100) * 100));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('stat-count').textContent = readCount;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('stat-percent').textContent = `${percent}%`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('progress-text').textContent = `${readCount} / 100 Books`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('progress-bar').style.width = `${percent}%`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Process Unlocked Milestones</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function updateBadges() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const readCount = Object.keys(readingJourney).length;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const milestones = [10, 25, 50, 75, 100];</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>milestones.forEach(m =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const badgeEl = document.getElementById(`badge-${m}`);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (readCount &gt;= m) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>badgeEl.classList.remove('opacity-40');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>badgeEl.classList.add('bg-green-50', 'border', 'border-green-200', 'scale-105', 'opacity-100');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>badgeEl.classList.add('opacity-40');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>badgeEl.classList.remove('bg-green-50', 'border', 'border-green-200', 'scale-105');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Update the reading reflection journal list</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function updateJournal() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const journalList = document.getElementById('journal-list');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const emptyState = document.getElementById('empty-journal-state');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const journalCountLabel = document.getElementById('journal-count');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const entries = Object.entries(readingJourney).sort((a, b) =&gt; parseInt(b[0]) - parseInt(a[0]));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>journalCountLabel.textContent = `${entries.length} Books Logged`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (entries.length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>emptyState.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>journalList.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>emptyState.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>journalList.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>journalList.innerHTML = '';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>entries.forEach(([num, book]) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const entryEl = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>entryEl.className = "bg-slate-50 p-4 rounded-2xl border border-slate-100 relative group transition-all hover:bg-slate-100/50";</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>let starsHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>for (let s = 1; s &lt;= 5; s++) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>starsHTML += `&lt;span class="${s &lt;= book.rating ? 'text-amber-400' : 'text-slate-200'}"&gt;★&lt;/span&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>entryEl.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-start justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="bg-green-500 text-white font-bold px-2.5 py-1 rounded-xl text-xs"&gt;Book #${num}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-bold text-slate-800 text-sm"&gt;${escapeHTML(book.title)}&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-xs text-slate-500 font-semibold"&gt;${book.author ? 'By ' + escapeHTML(book.author) : 'Author unknown'}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex flex-col items-end gap-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-xs font-bold text-slate-400"&gt;${book.date ? formatDate(book.date) : ''}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-sm"&gt;${starsHTML}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>${book.reflection ? `</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="mt-3 bg-white p-3 rounded-xl border border-slate-200/60 text-xs text-slate-600 italic font-semibold relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="absolute -top-2 left-3 bg-white px-1.5 text-[9px] text-green-500 uppercase font-black tracking-wider"&gt;Reflection&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>"${escapeHTML(book.reflection)}"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>` : ''}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="openLogModal(${num})" class="absolute bottom-2 right-2 text-xs font-extrabold text-green-600 hover:text-green-800 transition-colors opacity-0 group-hover:opacity-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Edit Log</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>journalList.appendChild(entryEl);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Helper: escape input to prevent basic markup injection</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function escapeHTML(str) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return str</p>
+<p class="p1"><span class="Apple-converted-space">                </span>.replace(/&amp;/g, '&amp;amp;')</p>
+<p class="p1"><span class="Apple-converted-space">                </span>.replace(/&lt;/g, '&amp;lt;')</p>
+<p class="p1"><span class="Apple-converted-space">                </span>.replace(/&gt;/g, '&amp;gt;')</p>
+<p class="p1"><span class="Apple-converted-space">                </span>.replace(/"/g, '&amp;quot;')</p>
+<p class="p1"><span class="Apple-converted-space">                </span>.replace(/'/g, '&amp;#039;');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Fetch Today's local date</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function getTodayDateString() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const today = new Date();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const yyyy = today.getFullYear();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let mm = today.getMonth() + 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let dd = today.getDate();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (dd &lt; 10) dd = '0' + dd;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (mm &lt; 10) mm = '0' + mm;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return yyyy + '-' + mm + '-' + dd;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Storage load</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function loadFromLocalStorage() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const storedJourney = localStorage.getItem('reads_journey_data');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const storedSettings = localStorage.getItem('reads_settings');</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (storedJourney) readingJourney = JSON.parse(storedJourney);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (storedSettings) settings = JSON.parse(storedSettings);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} catch (e) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.error("Local storage corruption detected. Resetting to empty defaults.");</p>
+<p class="p1"><span class="Apple-converted-space">                </span>readingJourney = {};</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// System reset popup dialogs</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let nextAlertAction = null;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function confirmReset() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>nextAlertAction = () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>readingJourney = {};</p>
+<p class="p1"><span class="Apple-converted-space">                </span>settings = { readerName: "", startDate: "", targetReward: "" };</p>
+<p class="p1"><span class="Apple-converted-space">                </span>localStorage.removeItem('reads_journey_data');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>localStorage.removeItem('reads_settings');</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>initializeGrid();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>updateStats();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>updateBadges();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>updateJournal();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>applySettingsToUI();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>closeAlert();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p1"><span class="Apple-converted-space">            </span>openAlert();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function openAlert() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('alert-modal').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('alert-confirm-btn').onclick = nextAlertAction;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function closeAlert() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('alert-modal').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
